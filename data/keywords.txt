@@ -1,0 +1,22 @@
+Data platform
+Data modeling
+Data objects
+Data engineering
+Retail
+Dev Ops
+Semantic Layer
+Cloud computing
+Consumption
+Data visualization
+Big data architecture
+Data Catalog
+Kafka
+Performance tuning
+Optimization
+Data Ingestion
+Data governance
+ETL (Extract, Transform, Load)
+Leadership
+Strategic
+Problem-solving
+Collaboration
