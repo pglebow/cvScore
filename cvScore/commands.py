@@ -3,10 +3,11 @@ from pathlib import Path
 import cvScore.__main__ as cvScore
 
 
-@click.command(help="Score the CVs using the provided keywords")
+@click.command()
 @click.argument("file_directory", type=click.Path(file_okay=False, dir_okay=True, writable=False, path_type=Path))
 @click.argument("keyword_file", type=click.Path(file_okay=True, dir_okay=False, writable=False, path_type=Path))
 def scoreCV(file_directory, keyword_file: Path):
+    """Scores PDF/DOCX CVs in file_directory using the keywords in keyword_file."""
     files = set()
 
     dir = Path(file_directory)

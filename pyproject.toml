@@ -7,6 +7,9 @@ readme = "README.md"
 authors = ["Philip Glebow <11603439+pglebow@users.noreply.github.com>"]
 packages = [{include = "cvScore"}]
 
+[tool.poetry.scripts]
+cvScore = "cvScore.cli:cli"
+
 [tool.poetry.dependencies]
 python = "^3.9"
 click = "^8.1.7"
