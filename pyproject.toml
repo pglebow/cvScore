@@ -5,6 +5,7 @@ version = "0.1.0"
 description = "A CLI application that scores CVs using keywords."
 readme = "README.md"
 authors = ["Philip Glebow <11603439+pglebow@users.noreply.github.com>"]
+packages = [{include = "cvScore"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
