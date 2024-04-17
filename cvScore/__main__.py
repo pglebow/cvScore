@@ -112,7 +112,7 @@ def process_files(files, keywords_path):
         elif kind == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
             total_score, keyword_count = process_word_document(file_path, keywords)
         else:
-            raise TypeError('File type not supported.')
+            raise TypeError(('File type not supported: {}'.format(kind)))
         score = ScoredDoc(fileName=file_path, score=total_score, keywordCount=keyword_count)
         retVal.add(score)
 

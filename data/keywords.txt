@@ -15,7 +15,7 @@ Performance tuning
 Optimization
 Data Ingestion
 Data governance
-ETL (Extract, Transform, Load)
+ETL
 Leadership
 Strategic
 Problem-solving
