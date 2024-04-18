@@ -1,6 +1,6 @@
 import re
 from docx import Document
-import PyPDF2
+import pypdf
 from pathlib import Path
 import filetype
 from cvScore.classes.ScoredDoc import ScoredDoc
@@ -33,7 +33,7 @@ def load_keywords(filename):
 def extract_text_from_pdf(pdf_path):
     text: str = ""
     with open(pdf_path, "rb") as f:
-        reader = PyPDF2.PdfReader(f)
+        reader = pypdf.PdfReader(f)
         info = reader.metadata
         num_pages = len(reader.pages)
         for page_num in range(num_pages):
