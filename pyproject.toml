@@ -1,7 +1,7 @@
 # pyproject.toml
 [tool.poetry]
 name = "cvScore"
-version = "0.1.2"
+version = "0.1.3"
 description = "A CLI application that scores CVs using keywords."
 readme = "README.md"
 authors = ["Philip Glebow <11603439+pglebow@users.noreply.github.com>"]
