@@ -3,15 +3,26 @@ from pathlib import Path
 import cvScore.__main__ as cvScore
 
 
-@click.command()
-@click.argument("file_directory", type=click.Path(file_okay=False, dir_okay=True, writable=False, path_type=Path))
-@click.argument("keyword_file", type=click.Path(file_okay=True, dir_okay=False, writable=False, path_type=Path))
-def scoreCV(file_directory, keyword_file: Path):
-    """Scores PDF/DOCX CVs in file_directory using the keywords in keyword_file."""
+@click.group()
+def main():
+    pass
+
+@main.command()
+@click.argument("cvDir", type=click.Path(file_okay=False, dir_okay=True, writable=False, path_type=Path))
+@click.argument("keywordFile", type=click.Path(file_okay=True, dir_okay=False, writable=False, path_type=Path))
+def score(cvdir, keywordfile):
+    """Score a set of resumes against a set of keywords.
+        The resumes must be in PDF or DOCX format.
+        The keywords file must have one keyword per line.
+
+        \b
+        Example:
+            score data/resumes keywords.txt
+        """
     files = set()
 
-    dir = Path(file_directory)
-    keywords = Path(keyword_file)
+    dir = Path(cvdir)
+    keywords = Path(keywordfile)
     for file in dir.iterdir():
         if file.is_file():
             if file.suffix == '.pdf' or file.suffix == '.docx':
@@ -19,4 +30,8 @@ def scoreCV(file_directory, keyword_file: Path):
 
     retVal = cvScore.process_files(files, keywords.absolute())
 
-    return retVal
+    for item in retVal:
+        click.echo(item)
+
+if __name__ == '__main__':
+    main()

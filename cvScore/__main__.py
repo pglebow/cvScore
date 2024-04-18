@@ -99,8 +99,6 @@ def process_pdf_document(pdf_document, keywords):
 
 def process_files(files, keywords_path):
     retVal = set()
-    total_score = int()
-    keyword_count = int()
 
     keywords = load_keywords(keywords_path)
 

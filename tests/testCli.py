@@ -18,7 +18,7 @@ class TestCLI(unittest.TestCase):
             keywords_file = Path(keywords_path)
             args = [str(dir_URL.absolute()), str(keywords_file.absolute())]
 
-            result = runner.invoke(commands.scoreCV, args, catch_exceptions=False)
+            result = runner.invoke(commands.score, args, catch_exceptions=False)
             self.assertEqual(result.exit_code, 0)
 
         except Exception as e:

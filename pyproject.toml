@@ -8,7 +8,7 @@ authors = ["Philip Glebow <11603439+pglebow@users.noreply.github.com>"]
 packages = [{include = "cvScore"}]
 
 [tool.poetry.scripts]
-cvScore = "cvScore.cli:cli"
+cvScore = "cvScore.commands:main"
 
 [tool.poetry.dependencies]
 python = "^3.9"
